@@ -1,0 +1,66 @@
+* {
+background-color: rgb(26, 27, 28);
+}
+
+main {
+  display: flex;
+}
+
+.game-section {
+  margin: 20px;
+  display: flex;
+  width: 250px;
+  height: 220px;
+  flex-direction: column;
+  border-radius: 25px;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.game-thumb {
+  display: flex;
+  height: 220px;
+  justify-content: end;
+  background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+
+p {
+  margin: 0;
+  margin-left: 5px;
+  color: white;
+}
+
+.game-title p {
+  margin: 0px;
+}
+
+.prices {
+  display: flex;
+  justify-content: space-around;
+}
+
+.store-logo {
+  display: flex;
+}
+
+.store-logo p {
+  margin: 0%;
+}
+
+.normal-price {
+  text-decoration: line-through;
+}
+
+.game-thumb img {
+  height: 30px;
+  width: 30px;
+  margin-right: 8px;
+  margin-top: 8px;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 500px) {
+}
