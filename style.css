@@ -1,16 +1,17 @@
+@media screen and (max-width: 500px) {
 * {
   background-color: rgb(26, 27, 28);
 }
 
 main {
-  display: flex;
+  display: column;
 }
 
 .game-section {
   margin: 20px;
   display: flex;
   width: 250px;
-  height: 220px;
+  height: 200px;
   flex-direction: column;
   border-radius: 25px;
   border: 2px solid black;
@@ -61,5 +62,4 @@ p {
   background-color: transparent;
 }
 
-@media screen and (max-width: 500px) {
 }
