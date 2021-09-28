@@ -1,65 +1,66 @@
 @media screen and (max-width: 500px) {
-* {
-  background-color: rgb(26, 27, 28);
-}
+  * {
+    background-color: rgb(26, 27, 28);
+  }
 
-main {
-  display: column;
-}
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.game-section {
-  margin: 20px;
-  display: flex;
-  width: 250px;
-  height: 200px;
-  flex-direction: column;
-  border-radius: 25px;
-  border: 2px solid black;
-  overflow: hidden;
-}
+  .game-section {
+    margin: 20px;
+    display: flex;
+    width: 250px;
+    height: 200px;
+    flex-direction: column;
+    border-radius: 25px;
+    border: 2px solid black;
+    overflow: hidden;
+  }
 
-.game-thumb {
-  display: flex;
-  height: 100px;
-  justify-content: end;
-  background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% 100px;
-}
+  .game-thumb {
+    display: flex;
+    height: 100px;
+    justify-content: end;
+    background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100px;
+  }
 
-p {
-  margin: 0;
-  margin-left: 5px;
-  color: white;
-}
+  p {
+    margin: 0;
+    margin-left: 5px;
+    color: white;
+  }
 
-.game-title p {
-  margin: 0px;
-}
+  .game-title p {
+    margin: 0px;
+  }
 
-.prices {
-  display: flex;
-  justify-content: space-around;
-}
+  .prices {
+    display: flex;
+    justify-content: space-around;
+  }
 
-.store-logo {
-  display: flex;
-}
+  .store-logo {
+    display: flex;
+  }
 
-.store-logo p {
-  margin: 0%;
-}
+  .store-logo p {
+    margin: 0%;
+  }
 
-.normal-price {
-  text-decoration: line-through;
-}
+  .normal-price {
+    text-decoration: line-through;
+  }
 
-.game-thumb img {
-  height: 30px;
-  width: 30px;
-  margin-right: 8px;
-  margin-top: 8px;
-  background-color: transparent;
-}
-
+  .game-thumb img {
+    height: 30px;
+    width: 30px;
+    margin-right: 8px;
+    margin-top: 8px;
+    background-color: transparent;
+  }
 }
