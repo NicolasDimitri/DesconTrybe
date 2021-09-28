@@ -15,8 +15,8 @@ header {
 
 .container {
   max-width: 920px;
-  border: 2px solid red;
   margin: 0 auto;
+  /* border: 2px solid red; */
 }
 
 .search {
