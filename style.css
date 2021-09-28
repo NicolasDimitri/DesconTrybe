@@ -1,5 +1,5 @@
 * {
-background-color: rgb(26, 27, 28);
+  background-color: rgb(26, 27, 28);
 }
 
 main {
@@ -23,9 +23,8 @@ main {
   justify-content: end;
   background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
   background-repeat: no-repeat;
-  background-size:  100% 100px;
+  background-size: 100% 100px;
 }
-
 
 p {
   margin: 0;
