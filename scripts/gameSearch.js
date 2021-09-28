@@ -52,9 +52,10 @@ function createGameElement({external:title, thumb}) {
 };
 
 async function insertGames(games) {
+  const main = document.querySelector('main');
   games.forEach((game) => {
     const gameElement = createGameElement(game);
-    document.body.appendChild(gameElement);
+    main.appendChild(gameElement);
   });
 };
 
