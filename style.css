@@ -20,6 +20,10 @@
     overflow: hidden;
   }
 
+  .game-section:hover {
+    border-color: azure;
+  }
+
   .game-thumb {
     display: flex;
     height: 100px;
@@ -33,6 +37,18 @@
     margin: 0;
     margin-left: 5px;
     color: white;
+  }
+
+  .percentage-savings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    width: 90px;
+  }
+
+  .percentage-savings p {
+    background-color: transparent;
   }
 
   .game-title p {
