@@ -27,6 +27,9 @@
 
   .game-section:hover {
     border-color: azure;
+  }
+  
+  .game-thumb:hover {
     filter: blur(3px);
   }
 
