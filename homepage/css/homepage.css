@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #25262b;
+  background-color: #282931;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -64,7 +64,69 @@ header {
   height: 30vh;
   /* border: 2px solid red; */
 }
+
+.deals {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.game-section {
+  background-color: #282931;
+  margin: 10px;
+  width: 40%;
+  border-radius: 20px;
+}
+
+.store-logo {
+  width: 50px;
+}
+
+.game-thumb {
+  display: flex;
+  justify-content: flex-end;
+  background-image: url('../images/search.png');
+  padding: 50px;
+  border: 1px solid red;
+}
+
+.game-detail {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game-detail button {
+  width: 30px;
+  height: 30px;
+  margin-top: 25px;
+}
+
+.game-store {
+  display: flex;
+  justify-content: center;
+}
+
+.game-values {
+  display: flex;
+  justify-content: center;
+}
+
+.game-values span {
+  margin: 10px;
+}
+
+.percentage-savings {
+  background-color: tomato;
+  border-radius: 5px;
+  padding: 3px;
+}
+
 /* Typography */
+
+.percentage-savings {
+  color: white;
+  font-weight: 900;
+}
 
 @media (min-width: 400px) and (max-width: 649px) {
   /* Layout */
