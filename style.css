@@ -27,6 +27,7 @@
 
   .game-section:hover {
     border-color: azure;
+    filter: blur(3px);
   }
 
   .game-thumb {
@@ -36,7 +37,6 @@
     background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100px;
-    filter: blur(3px);
   }
 
   p {
