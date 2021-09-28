@@ -3,6 +3,10 @@
     background-color: rgb(26, 27, 28);
   }
 
+  header {
+    background-color: green;
+  }
+
   main {
     display: flex;
     flex-direction: column;
@@ -20,6 +24,7 @@
     overflow: hidden;
   }
 
+
   .game-section:hover {
     border-color: azure;
   }
@@ -31,6 +36,7 @@
     background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100px;
+    filter: blur(3px);
   }
 
   p {
@@ -48,6 +54,7 @@
   }
 
   .percentage-savings p {
+    font-size: 25px;
     background-color: transparent;
   }
 
