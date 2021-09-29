@@ -1,5 +1,5 @@
 function redirectPage(name) {
-  window.location = `/DesconTrybe/gameSearch.html?title=${name}`;
+  window.location = `./gameSearch.html?title=${name}`;
 }
 
 const button = document.querySelector('button');
