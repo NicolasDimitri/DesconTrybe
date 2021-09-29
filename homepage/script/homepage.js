@@ -2,7 +2,6 @@ const urlDeals = 'https://www.cheapshark.com/api/1.0/deals';
 
 const urlStores = 'https://www.cheapshark.com/api/1.0/stores';
 
-
 async function getDeals() {
   const response = await fetch(urlDeals);
   const result = await response.json();
@@ -32,6 +31,7 @@ function createElements({ normalPrice, salePrice, savings, thumb, title }) {
   spanGameTitle.classList.add('game-title');
   divGameDetail.appendChild(spanGameTitle);
   spanGameTitle.innerText = title;
+  spanGameTitle.style.fontWeight = 900;
 
   const btnWishlist = document.createElement('button');
   btnWishlist.classList.add('btn-wishlist');

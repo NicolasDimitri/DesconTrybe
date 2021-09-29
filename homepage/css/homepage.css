@@ -96,6 +96,10 @@ header {
   border-radius: 20px;
 }
 
+.game-section:hover {
+  cursor: pointer;
+}
+
 .store-logo {
   width: 50px;
 }
@@ -111,7 +115,12 @@ header {
 
 .game-detail {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
+}
+
+.game-title {
+  margin: 7px auto;
 }
 
 .btn-wishlist {
