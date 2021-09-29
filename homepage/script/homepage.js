@@ -57,12 +57,13 @@ function createElements({ normalPrice, salePrice, savings, thumb, title }) {
   const spanNormalValue = document.createElement('span');
   spanNormalValue.classList.add('normal-price');
   divValues.appendChild(spanNormalValue);
-  spanNormalValue.innerText = `Normal price: $${normalPrice}`;
+  spanNormalValue.innerText = `$${normalPrice}`;
+  spanNormalValue.style.textDecoration = 'line-through';
 
   const spanSaleValue = document.createElement('span');
   spanSaleValue.classList.add('sale-price');
   divValues.appendChild(spanSaleValue);
-  spanSaleValue.innerText = `Sale price: $${salePrice}`;
+  spanSaleValue.innerText = `${salePrice}`;
 
   const spanPercentageValue = document.createElement('span');
   spanPercentageValue.classList.add('percentage-savings');
