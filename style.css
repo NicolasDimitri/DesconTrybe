@@ -16,6 +16,7 @@
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1;
   }
 
   .menu {
@@ -59,10 +60,27 @@
     overflow: hidden;
     box-shadow: 2px 1px 5px rgba(73, 73, 73, 0.575);
     cursor: pointer;
+    position: relative;
   }
 
-  .game-section:hover .game-thumb:not(p) {
+   .game-title {
+    position: absolute;
+    top: 30%;
+    visibility: hidden;
+    transition: 0.1s;
+  }
+
+  .game-section:hover .game-title {
+    visibility: visible;
+  }
+
+  .game-section:hover .game-thumb {
     filter: opacity(0.5) blur(3px);
+  }
+
+  .title2 {
+    font-size: 20px;
+    align-self: center;
   }
 
   .search-container {
@@ -122,9 +140,9 @@
     display: flex;
     height: 150px;
     justify-content: center;
-    background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
+    background-image: url('imgs/ribvuz6fflc61.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 140px;
     transition: 0.5s;
   }
 
@@ -145,10 +163,14 @@
 
   .prices {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
   }
 
   .normal-price {
-    text-decoration: line-through;
+    display: flex;
+    margin-right: 10px;
+    justify-content: flex-end;
+    font-size: 25px;
   }
 }
