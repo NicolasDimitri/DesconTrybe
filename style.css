@@ -4,7 +4,7 @@
     margin: 0px;
   }
 
-  header {
+  .header {
     background-color: green;
     height: 80px;
     display: flex;
@@ -12,7 +12,9 @@
     align-items: center;
     position: fixed;
     width: 100%;
+    top: 0;
   }
+
   .menu {
     height: 40px;
     width: 40px;
@@ -35,7 +37,8 @@
     background-color: aqua;
     margin-right: 15px;
   }
-  main {
+
+  .main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,9 +66,9 @@
 
   .game-thumb {
     display: flex;
-    height: 180px;
+    height: 150px;
     justify-content: end;
-    background-image: url('imgs/ribvuz6fflc61.png');
+    background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
@@ -74,14 +77,6 @@
     margin: 0;
     margin-left: 5px;
     color: white;
-  }
-
-  .percentage-savings {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: green;
-    width: 90px;
   }
 
   .game-title p {
