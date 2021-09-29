@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
 @media screen and (max-width: 500px) {
   * {
     background-color: rgb(26, 27, 28);
     margin: 0px;
+    font-family: 'Fira Sans', sans-serif;
   }
 
   .header {
@@ -16,10 +19,11 @@
   }
 
   .menu {
-    height: 40px;
-    width: 40px;
-    border: 1px solid black;
-    background-color: aqua;
+    height: 60px;
+    width: 60px;
+    background-image: url(imgs/download.png);
+    background-size: 100%;
+    border-radius: 10px;
     margin-left: 15px;
   }
 
@@ -54,23 +58,74 @@
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 2px 1px 5px rgba(73, 73, 73, 0.575);
+    cursor: pointer;
   }
 
-  .game-section:hover {
-    border-color: azure;
+  .game-section:hover .game-thumb:not(p) {
+    filter: opacity(0.5) blur(3px);
   }
 
-  .game-section:hover .game-thumb {
-    filter: blur(2px);
+  .search-container {
+    background: #fff;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+      -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .search-container:hover > .search-input {
+    width: 200px;
+  }
+
+  .search-container .search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+  }
+
+  .search-container .search-btn .fas {
+    color: #5cbdbb;
+  }
+
+  @keyframes hoverShake {
+    0% {
+      transform: skew(0deg, 0deg);
+    }
+    25% {
+      transform: skew(5deg, 5deg);
+    }
+    75% {
+      transform: skew(-5deg, -5deg);
+    }
+    100% {
+      transform: skew(0deg, 0deg);
+    }
+  }
+
+  .search-container:hover {
+    animation: hoverShake 0.15s linear 3;
   }
 
   .game-thumb {
     display: flex;
     height: 150px;
-    justify-content: end;
+    justify-content: center;
     background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
+    transition: 0.5s;
   }
 
   p {
@@ -80,9 +135,12 @@
     background-color: transparent;
   }
 
-  .game-title p {
+  .game-title {
     margin: 0px;
-    display: none;
+    margin-top: 6px;
+    text-align: center;
+    font-size: 20px;
+    align-self: center;
   }
 
   .prices {
