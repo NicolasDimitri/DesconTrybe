@@ -153,6 +153,11 @@ header {
 .game-stores img {
   width: 15%;
   margin-bottom: 12px;
+  opacity: 50%;
+}
+
+.selected {
+  opacity: 100%;
 }
 
 .game-values {

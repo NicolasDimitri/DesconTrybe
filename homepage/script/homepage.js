@@ -79,12 +79,12 @@ function createLogosIcons(storeIDS) {
   storeIDS.forEach((id) => {
     const image = getStoreImage(id);
     const imgLogo = document.createElement('img');
-    imgLogo.classList.add('logo')
+    imgLogo.classList.add('logo');
     imgLogo.src = image;
     sectionLogo.appendChild(imgLogo);
   });
 
-  sectionLogo.firstChild.classList.add('selected')
+  sectionLogo.firstChild.classList.add('selected');
   return sectionLogo;
 }
 
@@ -139,7 +139,7 @@ function createElements({
   const spanSaleValue = document.createElement('span');
   spanSaleValue.classList.add('sale-price');
   divValues.appendChild(spanSaleValue);
-  spanSaleValue.innerText = `${salePrice}`;
+  spanSaleValue.innerText = `$${salePrice}`;
 
   const spanPercentageValue = document.createElement('span');
   spanPercentageValue.classList.add('percentage-savings');
