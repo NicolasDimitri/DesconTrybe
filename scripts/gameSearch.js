@@ -69,3 +69,16 @@ window.onload = async () => {
   console.log(games);
   insertGames(games);
 };
+
+const btnAnimated = document.querySelector('.logo'); //botao do caralho q anima os bagulho
+
+let menuOpen = false;
+btnAnimated.addEventListener('click', () => {
+  if (!menuOpen) {
+    btnAnimated.classList.add('open');
+    menuOpen = true;
+  } else {
+    btnAnimated.classList.remove('open');
+    menuOpen = false;
+  }
+});
