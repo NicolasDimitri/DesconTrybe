@@ -86,7 +86,9 @@ header {
   display: flex;
   justify-content: flex-end;
   padding: 50px;
-  border: 1px solid red;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border: 1px solid red; */
 }
 
 .game-detail {
@@ -94,10 +96,10 @@ header {
   justify-content: space-around;
 }
 
-.game-detail button {
+.btn-wishlist {
   width: 30px;
   height: 30px;
-  margin-top: 25px;
+  margin: 0;
 }
 
 .game-store {
@@ -115,6 +117,8 @@ header {
 }
 
 .percentage-savings {
+  display: flex;
+  align-items: center;
   background-color: tomato;
   border-radius: 5px;
   padding: 3px;

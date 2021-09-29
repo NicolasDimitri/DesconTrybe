@@ -28,14 +28,14 @@ function createElements({ normalPrice, salePrice, savings, thumb, title }) {
   divGameDetail.classList.add('game-detail');
   sectionGame.appendChild(divGameDetail);
 
-  const divGameTitle = document.createElement('div');
-  divGameTitle.classList.add('game-title');
-  divGameDetail.appendChild(divGameTitle);
-  divGameTitle.innerText = title;
+  const spanGameTitle = document.createElement('span');
+  spanGameTitle.classList.add('game-title');
+  divGameDetail.appendChild(spanGameTitle);
+  spanGameTitle.innerText = title;
 
   const btnWishlist = document.createElement('button');
   btnWishlist.classList.add('btn-wishlist');
-  divGameDetail.appendChild(btnWishlist);
+  divThumb.appendChild(btnWishlist);
 
   const divGameStore = document.createElement('div');
   divGameStore.classList.add('game-store');
