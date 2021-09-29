@@ -39,17 +39,23 @@ function createCustomElement(tag, className, text = '') {
 }
 
 function createGameElement({ external: title, thumb, cheapest }) {
-  const gameSection = createCustomElement('section', 'game-section');
+  const gameSection = createCustomElement('div', 'game-section');
+
+  const gameTitleThumb = createCustomElement('p', 'game-title', title);
+  gameSection.appendChild(gameTitleThumb);
 
   const gameThumb = createCustomElement('div', 'game-thumb');
   gameThumb.style.backgroundImage = `url(${thumb})`;
   gameSection.appendChild(gameThumb);
 
-  const gameTitle = createCustomElement('p', 'game-title', title);
-  gameSection.appendChild(gameTitle);
+  const description = createCustomElement('div', 'description');
+  gameSection.appendChild(description)
 
-  const gamePrice = createCustomElement('p', 'game-price', cheapest);
-  gameSection.appendChild(gamePrice);
+  const gameTitle = createCustomElement('p', 'title2', title);
+  description.appendChild(gameTitle);
+
+  const gamePrice = createCustomElement('p', 'normal-price', '$' + cheapest);
+  description.appendChild(gamePrice);
 
   return gameSection;
 }
