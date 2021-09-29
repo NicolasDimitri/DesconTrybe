@@ -79,10 +79,12 @@ function createLogosIcons(storeIDS) {
   storeIDS.forEach((id) => {
     const image = getStoreImage(id);
     const imgLogo = document.createElement('img');
+    imgLogo.classList.add('logo')
     imgLogo.src = image;
     sectionLogo.appendChild(imgLogo);
   });
-  console.log(sectionLogo.innerHTML);
+
+  sectionLogo.firstChild.classList.add('selected')
   return sectionLogo;
 }
 
