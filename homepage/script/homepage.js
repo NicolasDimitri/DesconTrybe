@@ -6,7 +6,7 @@ const urlStores = 'https://www.cheapshark.com/api/1.0/stores';
 async function fetchStores() {
   const response = await fetch(urlStores);
   const result = await response.json();
-  return result
+  return result;
 }
 
 async function fetchDeals() {
@@ -16,7 +16,7 @@ async function fetchDeals() {
 }
 
 function getStoreImage(id) {
-  const store = stores.find(({storeID}) => id === storeID);
+  const store = stores.find(({ storeID }) => id === storeID);
   const logo = `https://www.cheapshark.com/${store.images.logo}`;
   return logo;
 }
@@ -26,13 +26,13 @@ function groupByDeals(deals) {
 
   for (let i = 0; i < deals.length; i++) {
     const deal = deals[i];
-    const isRepeated = groupedDeals.some(game => game.id === deal.gameID);
+    const isRepeated = groupedDeals.some((game) => game.id === deal.gameID);
 
     let game = {};
     game.deals = [];
 
     if (isRepeated) {
-      game = groupedDeals.find(({ id }) => deal.gameID === id); 
+      game = groupedDeals.find(({ id }) => deal.gameID === id);
       game.deals.push(deal);
       game.deals.sort((a, b) => a.salePrice - b.salePrice);
     } else {
@@ -47,7 +47,7 @@ function groupByDeals(deals) {
 function getGamesWithStores(gameList) {
   const groupedDeals = groupByDeals(gameList);
   const filteredGames = [];
-  groupedDeals.forEach(( game ) => {
+  groupedDeals.forEach((game) => {
     const mainDeal = game.deals[0];
     const ids = game.deals.map((deal) => deal.storeID);
     mainDeal.storeIDS = ids;
@@ -58,30 +58,48 @@ function getGamesWithStores(gameList) {
 
 async function insertDeals(data) {
   const filteredGames = getGamesWithStores(data);
-  filteredGames.forEach(({ normalPrice, salePrice, savings, thumb, title, storeIDS }) => {
-    
-    createElements({ normalPrice, salePrice, savings, thumb, title, storeIDS });
-  })
-};
+  filteredGames.forEach(
+    ({ normalPrice, salePrice, savings, thumb, title, storeIDS }) => {
+      createElements({
+        normalPrice,
+        salePrice,
+        savings,
+        thumb,
+        title,
+        storeIDS,
+      });
+    }
+  );
+}
 
 function createLogosIcons(storeIDS) {
   const sectionLogo = document.createElement('section');
+  sectionLogo.classList.add('game-stores');
 
   storeIDS.forEach((id) => {
     const image = getStoreImage(id);
     const imgLogo = document.createElement('img');
+    imgLogo.classList.add('logo')
     imgLogo.src = image;
     sectionLogo.appendChild(imgLogo);
-  })
-  console.log(sectionLogo.innerHTML)
+  });
+
+  sectionLogo.firstChild.classList.add('selected')
   return sectionLogo;
 }
 
-function createElements({ normalPrice, salePrice, savings, thumb, title, storeIDS }) {
+function createElements({
+  normalPrice,
+  salePrice,
+  savings,
+  thumb,
+  title,
+  storeIDS,
+}) {
   const sectionDeals = document.querySelector('.deals');
 
   const sectionGame = document.createElement('section');
-  sectionGame.classList.add("game-section");
+  sectionGame.classList.add('game-section');
   sectionDeals.appendChild(sectionGame);
 
   const divThumb = document.createElement('div');
@@ -97,19 +115,17 @@ function createElements({ normalPrice, salePrice, savings, thumb, title, storeID
   spanGameTitle.classList.add('game-title');
   divGameDetail.appendChild(spanGameTitle);
   spanGameTitle.innerText = title;
+  spanGameTitle.style.fontWeight = 900;
 
   const btnWishlist = document.createElement('button');
   btnWishlist.classList.add('btn-wishlist');
   divThumb.appendChild(btnWishlist);
 
-  const divGameStore = document.createElement('div');
-  divGameStore.classList.add('game-store');
-  sectionGame.appendChild(divGameStore);
+  const btnImg = document.createElement('img');
+  btnImg.classList.add('btn-add-img');
+  btnImg.src = 'images/wishlist.svg';
+  btnWishlist.appendChild(btnImg);
 
-  const imgGameStore = document.createElement('img');
-  imgGameStore.classList.add('store-logo');
-  divGameStore.appendChild(imgGameStore);
-  
   const divValues = document.createElement('div');
   divValues.classList.add('game-values');
   sectionGame.appendChild(divValues);
@@ -117,24 +133,25 @@ function createElements({ normalPrice, salePrice, savings, thumb, title, storeID
   const spanNormalValue = document.createElement('span');
   spanNormalValue.classList.add('normal-price');
   divValues.appendChild(spanNormalValue);
-  spanNormalValue.innerText = `Normal price: $${normalPrice}`;
+  spanNormalValue.innerText = `$${normalPrice}`;
+  spanNormalValue.style.textDecoration = 'line-through';
 
   const spanSaleValue = document.createElement('span');
   spanSaleValue.classList.add('sale-price');
   divValues.appendChild(spanSaleValue);
-  spanSaleValue.innerText = `Sale price: $${salePrice}`;
+  spanSaleValue.innerText = `$${salePrice}`;
 
   const spanPercentageValue = document.createElement('span');
   spanPercentageValue.classList.add('percentage-savings');
   divValues.appendChild(spanPercentageValue);
-  spanPercentageValue.innerText = `${Math.round(savings)}%`
+  spanPercentageValue.innerText = `${Math.round(savings)}%`;
 
   const sectionLogo = createLogosIcons(storeIDS);
   sectionGame.appendChild(sectionLogo);
-};
+}
 
-window.onload = async function() {
+window.onload = async function () {
   stores = await fetchStores();
   deals = await fetchDeals();
   insertDeals(deals);
-}
+};

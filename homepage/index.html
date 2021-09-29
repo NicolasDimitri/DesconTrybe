@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<<<<<<< HEAD
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -31,11 +32,36 @@
       <section class="more">
         <span>games on sale</span>
       </section>
+=======
+    <link rel="stylesheet" href="css/homepage.css" />
+    <title>DesconTrybe</title>
+  </head>
+  <body>
+    <header>
+      <h1>DesconTrybe</h1>
+    </header>
+>>>>>>> e6833ff7c794598cdea5829b2f1a5a6b5b923f78
 
-      <h1>Ofertas</h1>
+    <main>
+      <div class="container">
+        <section class="search">
+          <form action="/" method="GET" class="form">
+            <input type="search" placeholder="Search" class="search-field" />
+            <button type="submit" class="search-button">
+              <img src="images/search.png" />
+            </button>
+          </form>
+        </section>
+
+        <section class="more">
+          <a href="#offers">see more</a>
+        </section>
+      </div>
+      <div id="offers" class="trigger">
+        <h1>Ofertas</h1>
+      </div>
       <section class="deals"></section>
-    </div>
-  </main>
-  <script src="script/homepage.js"></script>
-</body>
+    </main>
+    <script src="script/homepage.js"></script>
+  </body>
 </html>

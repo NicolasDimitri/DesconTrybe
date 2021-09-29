@@ -1,5 +1,9 @@
 /* Layout */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: #202126;
@@ -36,8 +40,8 @@ header {
 }
 
 .search-field {
-  width: 80%;
-  height: auto;
+  width: 100%;
+  height: 60px;
   padding: 10px 35px 10px 15px;
   border: none;
   border-radius: 100px;
@@ -66,6 +70,20 @@ header {
   /* border: 2px solid red; */
 }
 
+.more a {
+  text-decoration: none;
+}
+
+.more a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+#offers {
+  display: flex;
+  justify-content: center;
+}
+
 .deals {
   display: flex;
   justify-content: center;
@@ -75,8 +93,12 @@ header {
 .game-section {
   background-color: #282931;
   margin: 10px;
-  width: 40%;
+  width: 20%;
   border-radius: 20px;
+}
+
+.game-section:hover {
+  cursor: pointer;
 }
 
 .store-logo {
@@ -86,7 +108,7 @@ header {
 .game-thumb {
   display: flex;
   justify-content: flex-end;
-  padding: 50px;
+  padding-bottom: 120px;
   background-repeat: no-repeat;
   background-size: cover;
   /* border: 1px solid red; */
@@ -94,18 +116,44 @@ header {
 
 .game-detail {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
+}
+
+.game-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 80%;
+  /* height: 1.2em; */
+  white-space: nowrap;
+  margin: 7px;
 }
 
 .btn-wishlist {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin: 0;
+  background-color: transparent;
+  border: none;
 }
 
-.game-store {
+.btn-add-img {
+  width: 30px;
+}
+
+.btn-wishlist:hover .btn-add-img:hover {
+  cursor: pointer;
+  width: 32px;
+}
+
+.game-stores {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.game-stores img {
+  width: 15%;
+  margin-bottom: 12px;
 }
 
 .game-values {
@@ -132,8 +180,16 @@ header {
   font-weight: 900;
 }
 
-@media (min-width: 400px) and (max-width: 649px) {
+@media (max-width: 1060px) {
   /* Layout */
+
+  .search-field {
+    width: 80%;
+  }
+
+  .game-section {
+    width: 40%;
+  }
 
   /* Typography */
 }
