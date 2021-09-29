@@ -1,21 +1,103 @@
-const urlDeals = 'https://www.cheapshark.com/api/1.0/deals';
-
+let stores;
+let deals;
+const urlDeals = 'https://www.cheapshark.com/api/1.0/deals?pageSize=50';
 const urlStores = 'https://www.cheapshark.com/api/1.0/stores';
 
-async function getDeals() {
+async function fetchStores() {
+  const response = await fetch(urlStores);
+  const result = await response.json();
+  return result;
+}
+
+async function fetchDeals() {
   const response = await fetch(urlDeals);
   const result = await response.json();
-  console.log(result);
-  result.forEach(({ normalPrice, salePrice, savings, thumb, title }) => {
-    createElements({ normalPrice, salePrice, savings, thumb, title });
-  })
-};
+  return result;
+}
 
-function createElements({ normalPrice, salePrice, savings, thumb, title }) {
+function getStoreImage(id) {
+  const store = stores.find(({ storeID }) => id === storeID);
+  const logo = `https://www.cheapshark.com/${store.images.logo}`;
+  return logo;
+}
+
+function groupByDeals(deals) {
+  const groupedDeals = [];
+
+  for (let i = 0; i < deals.length; i++) {
+    const deal = deals[i];
+    const isRepeated = groupedDeals.some((game) => game.id === deal.gameID);
+
+    let game = {};
+    game.deals = [];
+
+    if (isRepeated) {
+      game = groupedDeals.find(({ id }) => deal.gameID === id);
+      game.deals.push(deal);
+      game.deals.sort((a, b) => a.salePrice - b.salePrice);
+    } else {
+      game.id = deal.gameID;
+      game.deals = [deal];
+      groupedDeals.push(game);
+    }
+  }
+  return groupedDeals;
+}
+
+function getGamesWithStores(gameList) {
+  const groupedDeals = groupByDeals(gameList);
+  const filteredGames = [];
+  groupedDeals.forEach((game) => {
+    const mainDeal = game.deals[0];
+    const ids = game.deals.map((deal) => deal.storeID);
+    mainDeal.storeIDS = ids;
+    filteredGames.push(mainDeal);
+  });
+  return filteredGames;
+}
+
+async function insertDeals(data) {
+  const filteredGames = getGamesWithStores(data);
+  filteredGames.forEach(
+    ({ normalPrice, salePrice, savings, thumb, title, storeIDS }) => {
+      createElements({
+        normalPrice,
+        salePrice,
+        savings,
+        thumb,
+        title,
+        storeIDS,
+      });
+    }
+  );
+}
+
+function createLogosIcons(storeIDS) {
+  const sectionLogo = document.createElement('section');
+  sectionLogo.classList.add('game-stores');
+
+  storeIDS.forEach((id) => {
+    const image = getStoreImage(id);
+    const imgLogo = document.createElement('img');
+    imgLogo.src = image;
+    sectionLogo.appendChild(imgLogo);
+  });
+  console.log(sectionLogo.innerHTML);
+  return sectionLogo;
+}
+
+function createElements({
+  normalPrice,
+  salePrice,
+  savings,
+  thumb,
+  title,
+  storeIDS,
+}) {
   const sectionDeals = document.querySelector('.deals');
 
   const sectionGame = document.createElement('section');
-  sectionGame.classList.add("game-section");
+  sectionGame.classList.add('game-section');
   sectionDeals.appendChild(sectionGame);
 
   const divThumb = document.createElement('div');
@@ -42,14 +124,6 @@ function createElements({ normalPrice, salePrice, savings, thumb, title }) {
   btnImg.src = 'images/wishlist.svg';
   btnWishlist.appendChild(btnImg);
 
-  const divGameStore = document.createElement('div');
-  divGameStore.classList.add('game-store');
-  sectionGame.appendChild(divGameStore);
-
-  const imgGameStore = document.createElement('img');
-  imgGameStore.classList.add('store-logo');
-  divGameStore.appendChild(imgGameStore);
-  
   const divValues = document.createElement('div');
   divValues.classList.add('game-values');
   sectionGame.appendChild(divValues);
@@ -68,11 +142,14 @@ function createElements({ normalPrice, salePrice, savings, thumb, title }) {
   const spanPercentageValue = document.createElement('span');
   spanPercentageValue.classList.add('percentage-savings');
   divValues.appendChild(spanPercentageValue);
-  spanPercentageValue.innerText = `${Math.round(savings)}%`
-};
+  spanPercentageValue.innerText = `${Math.round(savings)}%`;
 
-
-
-window.onload = function() {
-  getDeals();
+  const sectionLogo = createLogosIcons(storeIDS);
+  sectionGame.appendChild(sectionLogo);
 }
+
+window.onload = async function () {
+  stores = await fetchStores();
+  deals = await fetchDeals();
+  insertDeals(deals);
+};

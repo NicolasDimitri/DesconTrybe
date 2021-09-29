@@ -120,7 +120,12 @@ header {
 }
 
 .game-title {
-  margin: 7px auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 80%;
+  /* height: 1.2em; */
+  white-space: nowrap;
+  margin: 7px;
 }
 
 .btn-wishlist {
@@ -140,9 +145,14 @@ header {
   width: 32px;
 }
 
-.game-store {
+.game-stores {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.game-stores img {
+  width: 15%;
+  margin-bottom: 12px;
 }
 
 .game-values {
