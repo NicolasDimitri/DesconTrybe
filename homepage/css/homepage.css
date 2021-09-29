@@ -70,13 +70,8 @@ header {
   /* border: 2px solid red; */
 }
 
-.more a {
-  text-decoration: none;
-}
-
-.more a:visited {
-  text-decoration: none;
-  color: inherit;
+#arrow {
+  width: 50px;
 }
 
 #offers {
