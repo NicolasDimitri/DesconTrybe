@@ -1,5 +1,9 @@
 /* Layout */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: #202126;
@@ -63,6 +67,20 @@ header {
   align-items: center;
   height: 30vh;
   /* border: 2px solid red; */
+}
+
+.more a {
+  text-decoration: none;
+}
+
+.more a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+#offers {
+  display: flex;
+  justify-content: center;
 }
 
 .deals {
