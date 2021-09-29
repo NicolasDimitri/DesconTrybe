@@ -139,7 +139,7 @@ function createElements({
   const spanSaleValue = document.createElement('span');
   spanSaleValue.classList.add('sale-price');
   divValues.appendChild(spanSaleValue);
-  spanSaleValue.innerText = `${salePrice}`;
+  spanSaleValue.innerText = `$${salePrice}`;
 
   const spanPercentageValue = document.createElement('span');
   spanPercentageValue.classList.add('percentage-savings');
