@@ -48,7 +48,8 @@
     border-radius: 15px;
   }
 
-  .search-btn, .fa-search {
+  .search-btn,
+  .fa-search {
     background-color: transparent;
   }
 
@@ -192,7 +193,7 @@
     display: flex;
     height: 150px;
     justify-content: center;
-    background-image: url('imgs/ribvuz6fflc61.png');
+    background-image: url('imgs/download.jpeg');
     background-repeat: no-repeat;
     background-size: 100% 140px;
     transition: 0.5s;
