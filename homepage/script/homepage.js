@@ -124,16 +124,6 @@ function createElements({
   const btnImg = document.createElement('img');
   btnImg.classList.add('btn-add-img');
   btnImg.src = 'images/wishlist.svg';
-  btnWishlist.addEventListener('click', () => {
-    let switcher = true;
-    if (switcher) {
-      btnImg.src = 'images/remove-wishlist.svg';
-      switcher = false;
-    } else {
-      btnImg.src = 'images/wishlist.svg';
-      switcher = true;
-    }
-  });
   btnWishlist.appendChild(btnImg);
 
   const divValues = document.createElement('div');
