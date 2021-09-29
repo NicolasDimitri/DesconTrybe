@@ -37,6 +37,11 @@ function createElements({ normalPrice, salePrice, savings, thumb, title }) {
   btnWishlist.classList.add('btn-wishlist');
   divThumb.appendChild(btnWishlist);
 
+  const btnImg = document.createElement('img');
+  btnImg.classList.add('btn-add-img');
+  btnImg.src = 'images/wishlist.svg';
+  btnWishlist.appendChild(btnImg);
+
   const divGameStore = document.createElement('div');
   divGameStore.classList.add('game-store');
   sectionGame.appendChild(divGameStore);
