@@ -1,16 +1,45 @@
 @media screen and (max-width: 500px) {
   * {
     background-color: rgb(26, 27, 28);
+    margin: 0px;
   }
 
   header {
     background-color: green;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+  }
+  .menu {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    background-color: aqua;
+    margin-left: 15px;
   }
 
+  .search {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    background-color: aqua;
+  }
+
+  .logo {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    background-color: aqua;
+    margin-right: 15px;
+  }
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
   }
 
   .game-section {
@@ -24,22 +53,21 @@
     overflow: hidden;
   }
 
-
   .game-section:hover {
     border-color: azure;
   }
-  
-  .game-section:hover .game-thumb{
-    filter: blur(3px);    
-  }  
+
+  .game-section:hover .game-thumb {
+    filter: blur(3px);
+  }
 
   .game-thumb {
     display: flex;
-    height: 100px;
+    height: 180px;
     justify-content: end;
-    background-image: url('imgs/EpS8g6YXMAchU9n.jpg');
+    background-image: url('imgs/ribvuz6fflc61.png');
     background-repeat: no-repeat;
-    background-size: 100% 100px;
+    background-size: 100% 100%;
   }
 
   p {
@@ -56,13 +84,9 @@
     width: 90px;
   }
 
-  .percentage-savings p {
-    font-size: 25px;
-    background-color: transparent;
-  }
-
   .game-title p {
     margin: 0px;
+    display: none;
   }
 
   .prices {
@@ -70,23 +94,7 @@
     justify-content: space-around;
   }
 
-  .store-logo {
-    display: flex;
-  }
-
-  .store-logo p {
-    margin: 0%;
-  }
-
   .normal-price {
     text-decoration: line-through;
-  }
-
-  .game-thumb img {
-    height: 30px;
-    width: 30px;
-    margin-right: 8px;
-    margin-top: 8px;
-    background-color: transparent;
   }
 }
