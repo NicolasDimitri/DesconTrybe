@@ -92,7 +92,7 @@ header {
 .game-section {
   background-color: #282931;
   margin: 10px;
-  width: 40%;
+  width: 20%;
   border-radius: 20px;
 }
 
@@ -165,6 +165,10 @@ header {
 
   .search-field {
     width: 80%;
+  }
+
+  .game-section {
+    width: 40%;
   }
 
   /* Typography */
