@@ -50,6 +50,7 @@ header {
 
 .search-button {
   background-color: #42d193;
+  text-align: center;
   border: none;
   outline: none;
   padding: 0 60px;
@@ -57,10 +58,11 @@ header {
   border-radius: 100px;
   cursor: pointer;
   font-weight: 900;
+  transition: 0.5s;
 }
 
 .search-button:hover {
-  transition: 0.5s;
+  padding-left: 80px;
   background-color: #cc9292;
 }
 
