@@ -100,10 +100,14 @@ header {
   margin: 10px;
   width: 20%;
   border-radius: 20px;
+  overflow: hidden; /* sugestão */
+  transition: 0.3s; /* sugestão */
 }
 
 .game-section:hover {
   cursor: pointer;
+  transform: scale(1.1); /* sugestão */
+  box-shadow: 2px 2px 5px gray; /* sugestão */
 }
 
 .store-logo {
