@@ -6,6 +6,7 @@ const button = document.querySelector('.search-button');
 const input = document.querySelector('.search-field');
 
 function searchGame(event) {
+  event.preventDefault();
   const gameName = input.value;
   redirectPage(gameName);
 }
