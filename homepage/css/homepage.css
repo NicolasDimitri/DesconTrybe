@@ -49,11 +49,19 @@ header {
 }
 
 .search-button {
-  background: transparent;
+  background-color: #42d193;
   border: none;
   outline: none;
-  margin-left: -40px;
-  margin-top: 5px;
+  padding: 0 60px;
+  margin-left: -85px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.search-button:hover {
+  transition: 0.5s;
+  background-color: #cc9292;
 }
 
 .search-button img {
