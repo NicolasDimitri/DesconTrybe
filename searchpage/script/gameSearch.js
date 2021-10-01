@@ -19,18 +19,6 @@ function parse_query_string(query) {
   return query_string;
 }
 
-// async function fetchGameByName(name) {
-//   const response = await fetch(ENDPOINT + `games?title=${name}&limit=20`);
-//   const json = await response.json();
-//   return json;
-// }
-
-// async function fetchGameByID(id) {
-//   const response = await fetch(ENDPOINT + `games?id=${id}`);
-//   const json = await response.json();
-//   return json;
-// }
-
 function createCustomElement(tag, className, text = '') {
   const element = document.createElement(tag);
   element.classList.add(className);
