@@ -78,7 +78,7 @@ window.onload = async () => {
   insertGames(deals);
 };
 
-const btnAnimated = document.querySelector('.logo');
+const btnAnimated = document.querySelector('.bagulho');
 
 let menuOpen = false;
 btnAnimated.addEventListener('click', () => {
