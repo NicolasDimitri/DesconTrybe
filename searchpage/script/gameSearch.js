@@ -32,9 +32,6 @@ function createCustomElement(tag, className, text = '') {
 function createGameElement({ title, thumb, savings, normalPrice, salePrice, storeIDS }) {
   const gameSection = createCustomElement('div', 'game-section');
 
-  const gameTitleThumb = createCustomElement('p', 'game-title', title);
-  gameSection.appendChild(gameTitleThumb);
-
   const gameThumb = createCustomElement('div', 'game-thumb');
   gameThumb.style.backgroundImage = `url(${thumb})`;
   gameSection.appendChild(gameThumb);
@@ -46,7 +43,7 @@ function createGameElement({ title, thumb, savings, normalPrice, salePrice, stor
   titleIcons.appendChild(gameTitle);
 
   const gameStoreLogos = createLogosIcons(storeIDS);
-  gameSection.appendChild(gameStoreLogos);
+  titleIcons.appendChild(gameStoreLogos);
 
   const gameSavings = createCustomElement('div', 'sale', `${Math.trunc(savings)}%`)
   gameSection.appendChild(gameSavings);
