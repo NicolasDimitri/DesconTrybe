@@ -134,6 +134,10 @@
   width: 700px;
   height: 120px;
   justify-content: space-between;
+  transition: 0.4s;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-right: 10px;
 }
 
 .title-imgs {
@@ -149,8 +153,10 @@
   display: flex;
 }
 
-.game-section:hover .game-thumb {
-  filter: opacity(0.5) blur(3px);
+.game-section:hover {
+  /* box-shadow: 0px 0px 50px rgba(187, 187, 187, 0.048); */
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .search-container {
@@ -288,7 +294,6 @@ p {
   font-size: 30px;
   justify-content: flex-end;
   display: flex;
-
   margin-right: 0;
 }
 
