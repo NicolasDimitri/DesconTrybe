@@ -17,6 +17,7 @@
   top: 0;
   z-index: 1;
 }
+
 .menu {
   height: 60px;
   width: 60px;
@@ -25,10 +26,12 @@
   border-radius: 10px;
   margin-left: 15px;
 }
+
 .div-title {
   background-color: transparent;
   font-size: 50px;
 }
+
 .logo {
   position: relative;
   display: flex;
