@@ -42,7 +42,6 @@
   background-color: transparent;
   border-radius: 15px;
 }
-@media screen and (max-width: 500px) {
   .search-button,
   .fa-search {
     background-color: transparent;
@@ -263,4 +262,3 @@
   .teste-de-animation.open .plus::after {
     background: transparent;
   }
-}
