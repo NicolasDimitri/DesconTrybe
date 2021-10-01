@@ -1,5 +1,8 @@
 const ENDPOINT = 'https://www.cheapshark.com/api/1.0/';
 
+let stores;
+let deals;
+
 function parse_query_string(query) {
   var vars = query.split('&');
   var query_string = {};
@@ -26,7 +29,7 @@ function createCustomElement(tag, className, text = '') {
   return element;
 }
 
-function createGameElement({ title, thumb, salePrice }) {
+function createGameElement({ title, thumb, savings, normalPrice, salePrice, storeIDS }) {
   const gameSection = createCustomElement('div', 'game-section');
 
   const gameTitleThumb = createCustomElement('p', 'game-title', title);
@@ -42,15 +45,26 @@ function createGameElement({ title, thumb, salePrice }) {
   const gameTitle = createCustomElement('p', 'title2', title);
   description.appendChild(gameTitle);
 
-  const gamePrice = createCustomElement('p', 'normal-price', '$' + salePrice);
-  description.appendChild(gamePrice);
+  const gameStoreLogos = createLogosIcons(storeIDS);
+  description.appendChild(gameStoreLogos);
 
+  const gameSavings = createCustomElement('p', 'savings', `${Math.trunc(savings)}%`)
+  description.appendChild(gameSavings);
+
+  const gameNormalPrice = createCustomElement('p', 'normal-price', '$' + normalPrice);
+  description.appendChild(gameNormalPrice);
+
+  const gameSalePrice = createCustomElement('p', 'sale-price', '$' + salePrice);
+  description.appendChild(gameSalePrice);
+  
   return gameSection;
 }
 
 async function insertGames(games) {
+  const filteredGames = getGamesWithStores(games);
   const main = document.querySelector('main');
-  games.forEach((game) => {
+
+  filteredGames.forEach((game) => {
     const gameElement = createGameElement(game);
     main.appendChild(gameElement);
   });
@@ -59,8 +73,9 @@ async function insertGames(games) {
 window.onload = async () => {
   const query = window.location.search.substring(1);
   const { title } = parse_query_string(query);
-  const games = await fetchDealsByTitle(title);
-  insertGames(games);
+  stores = await fetchStores();
+  deals = await fetchDealsByTitle(title);
+  insertGames(deals);
 };
 
 const btnAnimated = document.querySelector('.logo');

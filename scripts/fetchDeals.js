@@ -1,5 +1,3 @@
-let stores;
-let deals;
 const urlDeals = 'https://www.cheapshark.com/api/1.0/deals?pageSize=30';
 const urlStores = 'https://www.cheapshark.com/api/1.0/stores';
 

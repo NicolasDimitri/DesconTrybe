@@ -1,3 +1,5 @@
+let deals;
+let stores;
 
 async function insertDeals(data) {
   const filteredGames = getGamesWithStores(data);
