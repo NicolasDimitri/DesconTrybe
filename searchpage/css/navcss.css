@@ -269,6 +269,7 @@ p {
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  visibility: hidden;
 }
 
 .icones-store {
