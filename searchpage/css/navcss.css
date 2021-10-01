@@ -113,8 +113,16 @@
   margin-top: 100px;
 }
 
+.game-prices {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-right: 0;
+  width: 100px;
+}
+
 .game-stores {
-    overflow: hidden;
+  overflow: hidden;
   display: flex;
   width: 338px;
   margin-bottom: 5px;
@@ -125,7 +133,6 @@
   display: flex;
   width: 700px;
   height: 120px;
-  border: 1px solid yellow;
   justify-content: space-between;
 }
 
@@ -218,7 +225,7 @@ p {
 }
 
 .game-title {
-  margin: 0px;
+  margin-left: 4px;
   margin-top: 6px;
   font-size: 23px;
   align-self: center;
@@ -239,7 +246,9 @@ p {
   display: flex;
   margin-right: 10px;
   justify-content: flex-end;
-  font-size: 25px;
+  font-size: 20px;
+  opacity: 0.6;
+  margin-right: 0;
 }
 
 .teste-de-animation {
@@ -273,6 +282,14 @@ p {
   width: 120px;
   justify-content: center;
   align-items: center;
+}
+
+.sale-price {
+  font-size: 30px;
+  justify-content: flex-end;
+  display: flex;
+
+  margin-right: 0;
 }
 
 .sale {
