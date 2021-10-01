@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/homepage.css" />
+    <title>DesconTrybe</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="../homepage/index.html">
+        <div class="menu"></div>
+      </a>
+      <div class="div-title">
+        <p class="title">DesconTrybe</p>
+      </div>
+      <div class="bagulho">
+        <div class="menu-btn"></div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="search">
+          <form method="GET" class="form">
+            <input type="search" placeholder="Search" class="search-input" />
+            <button class="search-button">Search</button>
+          </form>
+        </section>
+
+        <section class="more">
+          <a href="#offers"><img id="arrow" src="images/arrow-next.png" /></a>
+        </section>
+      </div>
+      <div id="offers" class="trigger">
+        <h1>Ofertas</h1>
+      </div>
+      <section class="deals"></section>
+    </main>
+    <script src="/scripts/redirect.js"></script>
+    <script src="/scripts/fetchDeals.js"></script>
+    <script src="script/homepage.js"></script>
+  </body>
+</html>
