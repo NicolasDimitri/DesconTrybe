@@ -57,6 +57,7 @@
   background-color: transparent;
   border-radius: 15px;
 }
+
 .search-button,
 .fa-search {
   background-color: transparent;
@@ -113,7 +114,9 @@
 }
 
 .game-stores {
+    overflow: hidden;
   display: flex;
+  width: 338px;
   margin-bottom: 5px;
 }
 
