@@ -11,6 +11,7 @@ function searchGame(e) {
     redirectPage(gameName);
   }
 }
+
 button.addEventListener('click', searchGame);
 input.addEventListener('keypress', searchGame);
 
