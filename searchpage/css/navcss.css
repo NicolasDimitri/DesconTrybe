@@ -32,10 +32,6 @@
   font-size: 50px;
 }
 
-.title {
-    color: white;
-}
-
 .logo {
   position: relative;
   display: flex;
@@ -158,8 +154,9 @@
 }
 
 .game-section:hover {
-  /* box-shadow: 0px 0px 50px rgba(187, 187, 187, 0.048); */
-  transform: scale(1.05);
+  border: 1px solid gray;
+  /* box-shadow: 3px 3px 8px gray; */
+  transform: scale(0.95);
   cursor: pointer;
 }
 
