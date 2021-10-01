@@ -39,23 +39,26 @@ function createGameElement({ title, thumb, savings, normalPrice, salePrice, stor
   gameThumb.style.backgroundImage = `url(${thumb})`;
   gameSection.appendChild(gameThumb);
 
-  const description = createCustomElement('div', 'description');
-  gameSection.appendChild(description)
+  const titleIcons = createCustomElement('div', 'title-icons');
+  gameSection.appendChild(titleIcons)
 
-  const gameTitle = createCustomElement('p', 'title2', title);
-  description.appendChild(gameTitle);
+  const gameTitle = createCustomElement('p', 'game-title', title);
+  titleIcons.appendChild(gameTitle);
 
   const gameStoreLogos = createLogosIcons(storeIDS);
-  description.appendChild(gameStoreLogos);
+  gameSection.appendChild(gameStoreLogos);
 
-  const gameSavings = createCustomElement('p', 'savings', `${Math.trunc(savings)}%`)
-  description.appendChild(gameSavings);
+  const gameSavings = createCustomElement('div', 'sale', `${Math.trunc(savings)}%`)
+  gameSection.appendChild(gameSavings);
+
+  const gamePrices = createCustomElement('div', 'game-prices')
+  gameSection.appendChild(gamePrices);
 
   const gameNormalPrice = createCustomElement('p', 'normal-price', '$' + normalPrice);
-  description.appendChild(gameNormalPrice);
+  gamePrices.appendChild(gameNormalPrice);
 
   const gameSalePrice = createCustomElement('p', 'sale-price', '$' + salePrice);
-  description.appendChild(gameSalePrice);
+  gamePrices.appendChild(gameSalePrice);
   
   return gameSection;
 }
