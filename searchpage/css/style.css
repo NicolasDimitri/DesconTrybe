@@ -225,4 +225,12 @@
     justify-content: flex-end;
     font-size: 25px;
   }
+  
+  .teste-de-animation {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    margin-top: 90px;
+  }
 }
+
