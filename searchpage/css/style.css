@@ -228,14 +228,14 @@
   }
 
   .teste-de-animation {
-    height: 100px;
-    width: 100px;
-    background-color: transparent;
+    height: 70px;
+    width: 70px;
+    background-color: rgb(2, 185, 2);
     margin-top: 90px;
-    border: 1px solid yellow;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
   }
 
   .plus {
@@ -259,5 +259,13 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
     transition: all 0.5s ease-in-out;
+  }
+
+  .teste-de-animation.open {
+    background-color: rgb(216, 27, 27);
+  }
+
+  .teste-de-animation.open .plus::after {
+    background: transparent;
   }
 }

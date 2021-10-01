@@ -75,3 +75,17 @@ btnAnimated.addEventListener('click', () => {
     menuOpen = false;
   }
 });
+
+
+const btnFav = document.querySelector('.teste-de-animation');
+
+let fav = false;
+btnFav.addEventListener('click', () => {
+  if (!fav) {
+    btnFav.classList.add('open');
+    fav = true;
+  } else {
+    btnFav.classList.remove('open');
+    fav = false;
+  }
+});
