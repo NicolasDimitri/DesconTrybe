@@ -5,12 +5,15 @@ function redirectPage(name) {
 const button = document.querySelector('.search-button');
 const input = document.querySelector('.search-field');
 
-function searchGame(event) {
-  event.preventDefault();
-  const gameName = input.value;
-  redirectPage(gameName);
+function searchGame(e) {
+  if (e.type === 'click' || e.key === "Enter") {
+    const gameName = input.value;
+    redirectPage(gameName);
+  }
 }
+
 button.addEventListener('click', searchGame);
+button.addEventListener('keydown', searchGame);
 
 
 

@@ -72,11 +72,10 @@ window.onload = async () => {
   const query = window.location.search.substring(1);
   const { title } = parse_query_string(query);
   const games = await fetchGameByName(title);
-  console.log(games);
   insertGames(games);
 };
 
-const btnAnimated = document.querySelector('.logo'); //botao do caralho q anima os bagulho
+const btnAnimated = document.querySelector('.logo');
 
 let menuOpen = false;
 btnAnimated.addEventListener('click', () => {
