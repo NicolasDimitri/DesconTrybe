@@ -7,7 +7,7 @@
   font-family: 'Fira Sans', sans-serif;
 }
 .header {
-  background-color: purple;
+  background-color: #282931;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -30,6 +30,10 @@
 .div-title {
   background-color: transparent;
   font-size: 50px;
+}
+
+.title {
+    color: white;
 }
 
 .logo {

@@ -11,12 +11,24 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
-header {
+.header {
   background-color: #282931;
-  margin: 0;
+  height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
 }
+
+.div-title {
+  background-color: transparent;
+  font-size: 50px;
+  color: white;
+}
+
 
 .container {
   max-width: 920px;
