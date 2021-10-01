@@ -1,6 +1,6 @@
 let stores;
 let deals;
-const urlDeals = 'https://www.cheapshark.com/api/1.0/deals?pageSize=50';
+const urlDeals = 'https://www.cheapshark.com/api/1.0/deals?pageSize=30';
 const urlStores = 'https://www.cheapshark.com/api/1.0/stores';
 
 async function fetchStores() {
@@ -11,6 +11,12 @@ async function fetchStores() {
 
 async function fetchDeals() {
   const response = await fetch(urlDeals);
+  const result = await response.json();
+  return result;
+}
+
+async function fetchDealsByTitle(title) {
+  const response = await fetch(`${urlDeals}&title=${title}`);
   const result = await response.json();
   return result;
 }

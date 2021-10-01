@@ -38,7 +38,7 @@ function createCustomElement(tag, className, text = '') {
   return element;
 }
 
-function createGameElement({ external: title, thumb, cheapest }) {
+function createGameElement({ title, thumb, salePrice }) {
   const gameSection = createCustomElement('div', 'game-section');
 
   const gameTitleThumb = createCustomElement('p', 'game-title', title);
@@ -54,7 +54,7 @@ function createGameElement({ external: title, thumb, cheapest }) {
   const gameTitle = createCustomElement('p', 'title2', title);
   description.appendChild(gameTitle);
 
-  const gamePrice = createCustomElement('p', 'normal-price', '$' + cheapest);
+  const gamePrice = createCustomElement('p', 'normal-price', '$' + salePrice);
   description.appendChild(gamePrice);
 
   return gameSection;
@@ -71,7 +71,7 @@ async function insertGames(games) {
 window.onload = async () => {
   const query = window.location.search.substring(1);
   const { title } = parse_query_string(query);
-  const games = await fetchGameByName(title);
+  const games = await fetchDealsByTitle(title);
   insertGames(games);
 };
 
