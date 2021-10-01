@@ -236,6 +236,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    transition: all 0.3s ease-in-out
   }
 
   .plus {
@@ -246,7 +247,6 @@
     background: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-    transition: all 0.5s ease-in-out;
   }
 
   .plus::after {
@@ -258,7 +258,6 @@
     background: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-    transition: all 0.5s ease-in-out;
   }
 
   .teste-de-animation.open {
