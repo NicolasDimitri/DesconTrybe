@@ -274,16 +274,17 @@ body {
   margin: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .btn-add-img {
   width: 30px;
 }
 
-.btn-wishlist:hover .btn-add-img:hover {
+/* .btn-wishlist:hover .btn-add-img:hover {
   cursor: pointer;
   width: 32px;
-}
+} */
 
 .game-stores {
   display: flex;
