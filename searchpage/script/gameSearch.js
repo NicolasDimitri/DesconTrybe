@@ -114,17 +114,3 @@ btnAnimated.addEventListener('click', () => {
     menuOpen = false;
   }
 });
-
-let fav = false;
-
-function botaoDeFav(botaoDeFav) {
-  botaoDeFav.addEventListener('click', () => {
-    if (!fav) {
-      botaoDeFav.classList.add('open');
-      fav = true;
-    } else {
-      botaoDeFav.classList.remove('open');
-      fav = false;
-    }
-  });
-}
