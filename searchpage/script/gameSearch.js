@@ -30,7 +30,7 @@ function createCustomElement(tag, className, text = '') {
 }
 
 function createGameElement({
-  gameID,
+  dealID,
   title,
   thumb,
   savings,
@@ -46,8 +46,8 @@ function createGameElement({
   const btnFav = document.createElement('div');
   const plusInFav = document.createElement('div');
   btnFav.className = 'btn-wishlist';
-  btnFav.id = gameID;
-  addWishlistButtonClass(btnFav, gameID)
+  btnFav.id = dealID;
+  addWishlistButtonClass(btnFav, dealID)
   plusInFav.className = 'plus';
   btnFav.appendChild(plusInFav);
   btnFav.addEventListener('click', addGameToWishlist);

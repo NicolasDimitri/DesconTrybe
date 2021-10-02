@@ -8,15 +8,15 @@ function addGameToWishlist(e) {
   createWishlist();
 
   const btnWishlist = e.target.closest('.btn-wishlist');
-  const gameID = btnWishlist.id;
+  const dealID = btnWishlist.id;
   const wishlist = JSON.parse(localStorage.getItem('wishlist'));
-  const alreadyExists = wishlist.includes(gameID);
+  const alreadyExists = wishlist.includes(dealID);
 
   if (alreadyExists) {
-    const index = wishlist.indexOf(gameID);
+    const index = wishlist.indexOf(dealID);
     wishlist.splice(index, 1);
   } else {
-    wishlist.push(gameID);
+    wishlist.push(dealID);
   }
   btnWishlist.classList.toggle('open');
   localStorage.setItem('wishlist', JSON.stringify(wishlist));

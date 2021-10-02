@@ -11,7 +11,7 @@ async function insertDeals(data) {
 }
 
 function createElements({
-  gameID,
+  dealID,
   normalPrice,
   salePrice,
   savings,
@@ -43,8 +43,8 @@ function createElements({
   const plusInFav = document.createElement('div');
 
   btnWishlist.className = 'btn-wishlist';
-  btnWishlist.id = gameID;
-  addWishlistButtonClass(btnWishlist, gameID)
+  btnWishlist.id = dealID;
+  addWishlistButtonClass(btnWishlist, dealID)
   btnWishlist.addEventListener('click', addGameToWishlist);
   plusInFav.className = 'plus';
   btnWishlist.appendChild(plusInFav);
