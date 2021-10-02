@@ -52,7 +52,7 @@ function createElements({
 
   const btnImg = document.createElement('img');
   btnImg.classList.add('btn-add-img');
-  btnImg.src = 'images/wishlist.svg';
+  btnImg.src = '/homepage/images/wishlist.svg';
   btnWishlist.appendChild(btnImg);
 
   const divValues = document.createElement('div');
