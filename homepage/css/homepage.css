@@ -45,6 +45,10 @@ body {
   cursor: pointer;
 }
 
+.teste-de-animation:hover {
+  transform: scale(1.1);
+}
+
 .plus {
   content: '';
   position: absolute;
