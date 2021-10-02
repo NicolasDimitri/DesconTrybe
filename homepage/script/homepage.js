@@ -4,20 +4,14 @@ let stores;
 async function insertDeals(data) {
   const filteredGames = getGamesWithStores(data);
   filteredGames.forEach(
-    ({ normalPrice, salePrice, savings, thumb, title, storeIDS }) => {
-      createElements({
-        normalPrice,
-        salePrice,
-        savings,
-        thumb,
-        title,
-        storeIDS,
-      });
+    (game) => {
+      createElements(game);
     }
   );
 }
 
 function createElements({
+  gameID,
   normalPrice,
   salePrice,
   savings,
@@ -26,7 +20,6 @@ function createElements({
   storeIDS,
 }) {
   const sectionDeals = document.querySelector('.deals');
-
   const sectionGame = document.createElement('section');
   sectionGame.classList.add('game-section');
   sectionDeals.appendChild(sectionGame);
@@ -48,30 +41,34 @@ function createElements({
 
   const btnWishlist = document.createElement('button');
   btnWishlist.classList.add('btn-wishlist');
+  btnWishlist.id = gameID;
+  btnWishlist.addEventListener('click', addGameToWishlist);
+
   divThumb.appendChild(btnWishlist);
 
   //escrito pelo nic
-const btnFav = document.createElement('div');
-const plusInFav = document.createElement('div');
+  const btnFav = document.createElement('div');
+  const plusInFav = document.createElement('div');
 
-btnFav.className = 'teste-de-animation';
-plusInFav.className = 'plus';
-btnFav.appendChild(plusInFav);
+  btnFav.className = 'teste-de-animation';
+  addWishlistButtonClass(btnFav, gameID)
 
-btnWishlist.appendChild(btnFav)
+  plusInFav.className = 'plus';
+  btnFav.appendChild(plusInFav);
 
-const btnAnimated = document.querySelector('.bagulho');
+  btnWishlist.appendChild(btnFav)
 
-let menuOpen = false;
-btnAnimated.addEventListener('click', () => {
-  if (!menuOpen) {
-    btnAnimated.classList.add('open');
-    menuOpen = true;
-  } else {
-    btnAnimated.classList.remove('open');
-    menuOpen = false;
-  }
-});
+  const btnAnimated = document.querySelector('.bagulho');
+  let menuOpen = false;
+  btnAnimated.addEventListener('click', () => {
+    if (!menuOpen) {
+      btnAnimated.classList.add('open');
+      menuOpen = true;
+    } else {
+      btnAnimated.classList.remove('open');
+      menuOpen = false;
+    }
+  });
   //escrito pelo nic
 
   // const btnImg = document.createElement('img');
