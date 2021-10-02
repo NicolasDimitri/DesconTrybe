@@ -347,3 +347,14 @@ p {
 .btn-wishlist.open .plus::after {
   background: transparent;
 }
+
+@media screen and (max-width: 480px) {
+  .game-section {
+    transform: scale(0.5);
+
+  }
+  /* .game-prices p {
+    font-size: 30px;
+  } */
+
+}

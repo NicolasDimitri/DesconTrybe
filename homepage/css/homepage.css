@@ -259,6 +259,10 @@ body {
   text-align: center;
 }
 
+.title {
+  margin: 0;
+}
+
 .game-title {
   text-overflow: ellipsis;
   overflow: hidden;
