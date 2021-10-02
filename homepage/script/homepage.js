@@ -50,10 +50,34 @@ function createElements({
   btnWishlist.classList.add('btn-wishlist');
   divThumb.appendChild(btnWishlist);
 
-  const btnImg = document.createElement('img');
-  btnImg.classList.add('btn-add-img');
-  btnImg.src = '/homepage/images/wishlist.svg';
-  btnWishlist.appendChild(btnImg);
+  //escrito pelo nic
+const btnFav = document.createElement('div');
+const plusInFav = document.createElement('div');
+
+btnFav.className = 'teste-de-animation';
+plusInFav.className = 'plus';
+btnFav.appendChild(plusInFav);
+
+btnWishlist.appendChild(btnFav)
+
+const btnAnimated = document.querySelector('.bagulho');
+
+let menuOpen = false;
+btnAnimated.addEventListener('click', () => {
+  if (!menuOpen) {
+    btnAnimated.classList.add('open');
+    menuOpen = true;
+  } else {
+    btnAnimated.classList.remove('open');
+    menuOpen = false;
+  }
+});
+  //escrito pelo nic
+
+  // const btnImg = document.createElement('img');
+  // btnImg.classList.add('btn-add-img');
+  // btnImg.src = '/homepage/images/wishlist.svg';
+  // btnWishlist.appendChild(btnImg);
 
   const divValues = document.createElement('div');
   divValues.classList.add('game-values');
@@ -77,6 +101,20 @@ function createElements({
 
   const sectionLogo = createLogosIcons(storeIDS);
   sectionGame.appendChild(sectionLogo);
+
+  //escrito pelo nic
+
+let fav = false;
+btnFav.addEventListener('click', () => {
+  if (!fav) {
+    btnFav.classList.add('open');
+    fav = true;
+  } else {
+    btnFav.classList.remove('open');
+    fav = false;
+  }
+});
+//escrito pelo nic
 }
 
 window.onload = async function () {
