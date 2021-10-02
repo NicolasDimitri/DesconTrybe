@@ -30,6 +30,7 @@ function createCustomElement(tag, className, text = '') {
 }
 
 function createGameElement({
+  gameID,
   title,
   thumb,
   savings,
@@ -44,10 +45,12 @@ function createGameElement({
 
   const btnFav = document.createElement('div');
   const plusInFav = document.createElement('div');
-  btnFav.className = 'teste-de-animation';
+  btnFav.className = 'btn-wishlist';
+  btnFav.id = gameID;
+  addWishlistButtonClass(btnFav, gameID)
   plusInFav.className = 'plus';
   btnFav.appendChild(plusInFav);
-  botaoDeFav(btnFav);
+  btnFav.addEventListener('click', addGameToWishlist);
 
   gameThumb.appendChild(btnFav);
   gameSection.appendChild(gameThumb);

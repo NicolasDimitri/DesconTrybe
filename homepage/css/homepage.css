@@ -33,7 +33,7 @@ body {
   margin-left: 15px;
 }
 /* escrito pelo nic */
-.teste-de-animation {
+.btn-wishlist {
   height: 30px;
   width: 30px;
   background-color: rgb(2, 185, 2);
@@ -45,7 +45,7 @@ body {
   cursor: pointer;
 }
 
-.teste-de-animation:hover {
+.btn-wishlist:hover {
   transform: scale(1.1);
 }
 
@@ -60,7 +60,7 @@ body {
 }
 
 .plus::after {
-  transform: translateX(-10px) rotate(-90deg);
+  transform:  rotate(-90deg);
   content: '';
   position: absolute;
   width: 20px;
@@ -70,11 +70,11 @@ body {
   box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
 }
 
-.teste-de-animation.open {
+.btn-wishlist.open {
   background-color: rgb(216, 27, 27);
 }
 
-.teste-de-animation.open .plus::after {
+.btn-wishlist.open .plus::after {
   background: transparent;
 }
 
@@ -266,15 +266,6 @@ body {
   /* height: 1.2em; */
   white-space: nowrap;
   margin: 7px;
-}
-
-.btn-wishlist {
-  width: 40px;
-  height: 40px;
-  margin: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
 }
 
 .btn-add-img {

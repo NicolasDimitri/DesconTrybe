@@ -7,7 +7,8 @@ function createWishlist() {
 function addGameToWishlist(e) {
   createWishlist();
 
-  const gameID = e.target.closest('.btn-wishlist').id;
+  const btnWishlist = e.target.closest('.btn-wishlist');
+  const gameID = btnWishlist.id;
   const wishlist = JSON.parse(localStorage.getItem('wishlist'));
   const alreadyExists = wishlist.includes(gameID);
 
@@ -17,6 +18,7 @@ function addGameToWishlist(e) {
   } else {
     wishlist.push(gameID);
   }
+  btnWishlist.classList.toggle('open');
   localStorage.setItem('wishlist', JSON.stringify(wishlist));
 }
 

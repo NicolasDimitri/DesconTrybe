@@ -39,24 +39,16 @@ function createElements({
   spanGameTitle.innerText = title;
   spanGameTitle.style.fontWeight = 900;
 
-  const btnWishlist = document.createElement('button');
-  btnWishlist.classList.add('btn-wishlist');
-  btnWishlist.id = gameID;
-  btnWishlist.addEventListener('click', addGameToWishlist);
-
-  divThumb.appendChild(btnWishlist);
-
-  //escrito pelo nic
-  const btnFav = document.createElement('div');
+  const btnWishlist = document.createElement('div');
   const plusInFav = document.createElement('div');
 
-  btnFav.className = 'teste-de-animation';
-  addWishlistButtonClass(btnFav, gameID)
-
+  btnWishlist.className = 'btn-wishlist';
+  btnWishlist.id = gameID;
+  addWishlistButtonClass(btnWishlist, gameID)
+  btnWishlist.addEventListener('click', addGameToWishlist);
   plusInFav.className = 'plus';
-  btnFav.appendChild(plusInFav);
-
-  btnWishlist.appendChild(btnFav)
+  btnWishlist.appendChild(plusInFav);
+  divThumb.appendChild(btnWishlist);
 
   const btnAnimated = document.querySelector('.bagulho');
   let menuOpen = false;
@@ -98,20 +90,6 @@ function createElements({
 
   const sectionLogo = createLogosIcons(storeIDS);
   sectionGame.appendChild(sectionLogo);
-
-  //escrito pelo nic
-
-let fav = false;
-btnFav.addEventListener('click', () => {
-  if (!fav) {
-    btnFav.classList.add('open');
-    fav = true;
-  } else {
-    btnFav.classList.remove('open');
-    fav = false;
-  }
-});
-//escrito pelo nic
 }
 
 window.onload = async function () {

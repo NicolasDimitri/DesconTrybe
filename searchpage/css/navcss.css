@@ -263,7 +263,7 @@ p {
   margin-right: 0;
 }
 
-.teste-de-animation {
+.btn-wishlist {
   height: 30px;
   width: 30px;
   background-color: rgb(2, 185, 2);
@@ -340,10 +340,10 @@ p {
   box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
 }
 
-.teste-de-animation.open {
+.btn-wishlist.open {
   background-color: rgb(216, 27, 27);
 }
 
-.teste-de-animation.open .plus::after {
+.btn-wishlist.open .plus::after {
   background: transparent;
 }
