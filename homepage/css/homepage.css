@@ -23,6 +23,9 @@ body {
   z-index: 1;
 }
 
+.logo-name {
+  display: flex;
+}
 
 .menu {
   height: 60px;
@@ -60,7 +63,7 @@ body {
 }
 
 .plus::after {
-  transform:  rotate(-90deg);
+  transform: rotate(-90deg);
   content: '';
   position: absolute;
   width: 20px;
@@ -77,10 +80,18 @@ body {
 .btn-wishlist.open .plus::after {
   background: transparent;
 }
+.navegation {
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.navegation a {
+  margin: 0 10px;
+}
 
 .bagulho {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -145,8 +156,8 @@ body {
   background-color: transparent;
   font-size: 50px;
   color: white;
+  margin-left: 8px;
 }
-
 
 .container {
   max-width: 920px;
