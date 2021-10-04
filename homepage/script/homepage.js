@@ -3,11 +3,9 @@ let stores;
 
 async function insertDeals(data) {
   const filteredGames = getGamesWithStores(data);
-  filteredGames.forEach(
-    (game) => {
-      createElements(game);
-    }
-  );
+  filteredGames.forEach((game) => {
+    createElements(game);
+  });
 }
 
 function createElements({
@@ -44,7 +42,7 @@ function createElements({
 
   btnWishlist.className = 'btn-wishlist';
   btnWishlist.id = dealID;
-  addWishlistButtonClass(btnWishlist, dealID)
+  addWishlistButtonClass(btnWishlist, dealID);
   btnWishlist.addEventListener('click', addGameToWishlist);
   plusInFav.className = 'plus';
   btnWishlist.appendChild(plusInFav);
@@ -92,8 +90,23 @@ function createElements({
   sectionGame.appendChild(sectionLogo);
 }
 
+function createLoad() {
+  const loader = document.createElement('div');
+  const div = document.createElement('div');
+  const sectionGame = document.querySelector('section')
+  loader.className = 'loader';
+  loader.appendChild(div);
+  sectionGame.appendChild(loader);
+}
+
+function apagaLoad() {
+  document.querySelector('.loader').remove()
+}
+
 window.onload = async function () {
+createLoad()
   stores = await fetchStores();
   deals = await fetchDeals();
+  // apagaLoad()
   insertDeals(deals);
 };

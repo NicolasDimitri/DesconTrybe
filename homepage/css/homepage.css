@@ -90,6 +90,35 @@ body {
   color: white;
 }
 
+.loader {
+  align-self: center;
+  position: absolute;
+  margin-top: 300px;
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader div {
+  border: 8px solid yellow;
+  border-radius: 50%;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  border-top-color: red;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg)
+  }  
+}
+
 .bagulho {
   position: relative;
   display: none;
