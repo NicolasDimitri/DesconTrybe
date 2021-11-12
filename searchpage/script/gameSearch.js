@@ -29,15 +29,34 @@ function createCustomElement(tag, className, text = '') {
   return element;
 }
 
-function createGameElement({ title, thumb, savings, normalPrice, salePrice, storeIDS }) {
+function createGameElement({
+  dealID,
+  title,
+  thumb,
+  savings,
+  normalPrice,
+  salePrice,
+  storeIDS,
+}) {
   const gameSection = createCustomElement('div', 'game-section');
 
   const gameThumb = createCustomElement('div', 'game-thumb');
   gameThumb.style.backgroundImage = `url(${thumb})`;
+
+  const btnFav = document.createElement('div');
+  const plusInFav = document.createElement('div');
+  btnFav.className = 'btn-wishlist';
+  btnFav.id = dealID;
+  addWishlistButtonClass(btnFav, dealID)
+  plusInFav.className = 'plus';
+  btnFav.appendChild(plusInFav);
+  btnFav.addEventListener('click', addGameToWishlist);
+
+  gameThumb.appendChild(btnFav);
   gameSection.appendChild(gameThumb);
 
   const titleIcons = createCustomElement('div', 'title-icons');
-  gameSection.appendChild(titleIcons)
+  gameSection.appendChild(titleIcons);
 
   const gameTitle = createCustomElement('p', 'game-title', title);
   titleIcons.appendChild(gameTitle);
@@ -45,18 +64,26 @@ function createGameElement({ title, thumb, savings, normalPrice, salePrice, stor
   const gameStoreLogos = createLogosIcons(storeIDS);
   titleIcons.appendChild(gameStoreLogos);
 
-  const gameSavings = createCustomElement('div', 'sale', `${Math.trunc(savings)}%`)
+  const gameSavings = createCustomElement(
+    'div',
+    'sale',
+    `${Math.trunc(savings)}%`
+  );
   gameSection.appendChild(gameSavings);
 
-  const gamePrices = createCustomElement('div', 'game-prices')
+  const gamePrices = createCustomElement('div', 'game-prices');
   gameSection.appendChild(gamePrices);
 
-  const gameNormalPrice = createCustomElement('p', 'normal-price', '$' + normalPrice);
+  const gameNormalPrice = createCustomElement(
+    'p',
+    'normal-price',
+    '$' + normalPrice
+  );
   gamePrices.appendChild(gameNormalPrice);
 
   const gameSalePrice = createCustomElement('p', 'sale-price', '$' + salePrice);
   gamePrices.appendChild(gameSalePrice);
-  
+
   return gameSection;
 }
 
@@ -90,17 +117,3 @@ btnAnimated.addEventListener('click', () => {
     menuOpen = false;
   }
 });
-
-
-// const btnFav = document.querySelector('.teste-de-animation');
-
-// let fav = false;
-// btnFav.addEventListener('click', () => {
-//   if (!fav) {
-//     btnFav.classList.add('open');
-//     fav = true;
-//   } else {
-//     btnFav.classList.remove('open');
-//     fav = false;
-//   }
-// });

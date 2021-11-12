@@ -2,12 +2,22 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css');
 
 * {
-  background-color: rgb(26, 27, 28);
   margin: 0px;
   font-family: 'Fira Sans', sans-serif;
 }
+
+body {
+  background-color: rgb(26, 27, 28);
+}
+
+.main-title {
+  color: white;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
 .header {
-  background-color: purple;
+  background-color: #282931;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -17,6 +27,17 @@
   top: 0;
   z-index: 1;
 }
+
+.navegation {
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.navegation a {
+  margin: 0 10px;
+  color: white;
+}
+
 .menu {
   height: 60px;
   width: 60px;
@@ -25,11 +46,29 @@
   border-radius: 10px;
   margin-left: 15px;
 }
+
+.a-menu {
+  background-color: transparent;
+}
+
 .div-title {
   background-color: transparent;
   font-size: 50px;
 }
+
 .logo {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 15px;
+  margin: 0 3px;
+  border-radius: 50%;
+}
+
+.bagulho {
   position: relative;
   display: flex;
   justify-content: center;
@@ -41,226 +80,301 @@
   border: 3px solid white;
   background-color: transparent;
   border-radius: 15px;
+  margin-right: 15px;
 }
-@media screen and (max-width: 500px) {
-  .search-button,
-  .fa-search {
-    background-color: transparent;
-  }
 
-  .menu-btn {
-    width: 50px;
-    height: 6px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-    transition: all 0.5s ease-in-out;
-  }
+.search-button,
+.fa-search {
+  background-color: transparent;
+}
 
-  .menu-btn::before,
-  .menu-btn::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 6px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-    transition: all 0.5s ease-in-out;
-  }
+.menu-btn {
+  width: 50px;
+  height: 6px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
 
-  .menu-btn::before {
-    transform: translateY(-16px);
-  }
+.menu-btn::before,
+.menu-btn::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
 
-  .menu-btn::after {
-    transform: translateY(16px);
-  }
+.menu-btn::before {
+  transform: translateY(-16px);
+}
 
-  .logo.open .menu-btn {
-    transform: translateX(-50px);
-    background: transparent;
-    box-shadow: none;
-  }
+.menu-btn::after {
+  transform: translateY(16px);
+}
 
-  .logo.open .menu-btn::before {
-    transform: rotate(45deg) translate(35px, -35px);
-  }
+.bagulho.open .menu-btn {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
 
-  .logo.open .menu-btn::after {
-    transform: rotate(-45deg) translate(35px, 35px);
-  }
+.bagulho.open .menu-btn::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
 
-  .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-  }
+.bagulho.open .menu-btn::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.game-prices {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-right: 0;
+  width: 100px;
+}
+
+.game-stores {
+  overflow: hidden;
+  display: flex;
+  width: 338px;
+  margin-bottom: 5px;
+}
+
+.game-section {
+  margin: 20px;
+  display: flex;
+  width: 700px;
+  height: 120px;
+  justify-content: space-between;
+  transition: 0.4s;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-right: 10px;
+}
+
+.title-imgs {
+  display: flex;
+}
+
+.title-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.preços {
+  display: flex;
+}
+
+.game-section:hover {
+  border: 1px solid gray;
+  /* box-shadow: 3px 3px 8px gray; */
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+.search-container {
+  background: #fff;
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-container:hover > .search-input {
+  width: 200px;
+}
+
+.search-container .search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+}
+
+.search-container .search-btn .fas {
+  color: #5cbdbb;
+}
+
+@keyframes hoverShake {
+  0% {
+    transform: skew(0deg, 0deg);
+  }
+  25% {
+    transform: skew(5deg, 5deg);
+  }
+  75% {
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    transform: skew(0deg, 0deg);
+  }
+}
+
+.search-container:hover {
+  animation: hoverShake 0.15s linear 3;
+}
+
+.game-thumb {
+  display: flex;
+  height: 100%;
+  width: 150px;
+  justify-content: flex-start;
+  background-image: url(/imgs/ribvuz6fflc61.png);
+  background-repeat: no-repeat;
+  background-size: 100% 140px;
+  transition: 0.5s;
+}
+
+p {
+  margin: 0;
+  margin-left: 5px;
+  color: white;
+  background-color: transparent;
+}
+
+.game-title {
+  margin-left: 4px;
+  margin-top: 6px;
+  font-size: 23px;
+  align-self: center;
+  width: 355px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.normal-price {
+  text-decoration: line-through;
+  display: flex;
+  margin-right: 10px;
+  justify-content: flex-end;
+  font-size: 20px;
+  opacity: 0.6;
+  margin-right: 0;
+}
+
+.btn-wishlist {
+  height: 30px;
+  width: 30px;
+  background-color: rgb(2, 185, 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.icones-store {
+  display: flex;
+}
+
+.title-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sale {
+  display: flex;
+  align-self: center;
+  background-color: green;
+  height: 60px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sale-price {
+  font-size: 30px;
+  justify-content: flex-end;
+  display: flex;
+  margin-right: 0;
+}
+
+.sale {
+  color: white;
+  font-size: 40px;
+}
+
+.icon2 img,
+.icon1 img {
+  width: 50px;
+  height: 50px;
+}
+
+.icon1,
+.icon2 {
+  display: flex;
+}
+
+.plus {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+}
+
+.plus::after {
+  transform: rotate(-90deg);
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+}
+
+.btn-wishlist.open {
+  background-color: rgb(216, 27, 27);
+}
+
+.btn-wishlist.open .plus::after {
+  background: transparent;
+}
+
+@media screen and (max-width: 480px) {
   .game-section {
-    margin: 20px;
-    display: flex;
-    width: 250px;
-    height: 200px;
-    flex-direction: column;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 3px 2px 10px rgba(73, 73, 73, 0.575);
-    cursor: pointer;
-    position: relative;
-  }
+    transform: scale(0.5);
 
-  .game-title {
-    position: absolute;
-    top: 30%;
-    visibility: hidden;
-    transition: 0.1s;
   }
+  /* .game-prices p {
+    font-size: 30px;
+  } */
 
-  .game-section:hover .game-title {
-    visibility: visible;
-  }
-
-  .game-section:hover .game-thumb {
-    filter: opacity(0.5) blur(3px);
-  }
-
-  .title2 {
-    font-size: 20px;
-    align-self: center;
-  }
-
-  .search-container {
-    background: #fff;
-    height: 30px;
-    border-radius: 30px;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.8s;
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
-      -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-      inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
-      inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
-  }
-
-  .search-container:hover > .search-input {
-    width: 200px;
-  }
-
-  .search-container .search-input {
-    background: transparent;
-    border: none;
-    outline: none;
-    width: 0px;
-    font-weight: 500;
-    font-size: 16px;
-    transition: 0.8s;
-  }
-
-  .search-container .search-btn .fas {
-    color: #5cbdbb;
-  }
-
-  @keyframes hoverShake {
-    0% {
-      transform: skew(0deg, 0deg);
-    }
-    25% {
-      transform: skew(5deg, 5deg);
-    }
-    75% {
-      transform: skew(-5deg, -5deg);
-    }
-    100% {
-      transform: skew(0deg, 0deg);
-    }
-  }
-
-  .search-container:hover {
-    animation: hoverShake 0.15s linear 3;
-  }
-
-  .game-thumb {
-    display: flex;
-    height: 150px;
-    justify-content: center;
-    background-image: url(/imgs/ribvuz6fflc61.png);
-    background-repeat: no-repeat;
-    background-size: 100% 140px;
-    transition: 0.5s;
-  }
-
-  p {
-    margin: 0;
-    margin-left: 5px;
-    color: white;
-    background-color: transparent;
-  }
-
-  .game-title {
-    margin: 0px;
-    margin-top: 6px;
-    text-align: center;
-    font-size: 20px;
-    align-self: center;
-  }
-
-  .description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  .normal-price {
-    display: flex;
-    margin-right: 10px;
-    justify-content: flex-end;
-    font-size: 25px;
-  }
-
-  .teste-de-animation {
-    height: 70px;
-    width: 70px;
-    background-color: rgb(2, 185, 2);
-    margin-top: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-  }
-
-  .plus {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 6px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-  }
-
-  .plus::after {
-    transform: rotate(-90deg);
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 6px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-  }
-
-  .teste-de-animation.open {
-    background-color: rgb(216, 27, 27);
-  }
-
-  .teste-de-animation.open .plus::after {
-    background: transparent;
-  }
 }

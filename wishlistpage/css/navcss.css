@@ -2,10 +2,14 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css');
 
 * {
-  background-color: rgb(26, 27, 28);
   margin: 0px;
   font-family: 'Fira Sans', sans-serif;
 }
+
+body {
+  background-color: rgb(26, 27, 28);
+}
+
 .header {
   background-color: #282931;
   height: 80px;
@@ -16,6 +20,22 @@
   width: 100%;
   top: 0;
   z-index: 1;
+}
+
+.main-title {
+  color: white;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+.navegation {
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.navegation a {
+  margin: 0 10px;
+  color: white;
 }
 
 .menu {
@@ -222,7 +242,7 @@
   display: flex;
   height: 100%;
   width: 150px;
-  justify-content: center;
+  justify-content: flex-start;
   background-image: url(/imgs/ribvuz6fflc61.png);
   background-repeat: no-repeat;
   background-size: 100% 140px;
@@ -263,17 +283,17 @@ p {
   margin-right: 0;
 }
 
-.teste-de-animation {
-  height: 70px;
-  width: 70px;
+.btn-wishlist {
+  height: 30px;
+  width: 30px;
   background-color: rgb(2, 185, 2);
-  margin-top: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  margin: 3px;
 }
 
 .icones-store {
@@ -322,8 +342,8 @@ p {
 .plus {
   content: '';
   position: absolute;
-  width: 50px;
-  height: 6px;
+  width: 20px;
+  height: 3px;
   background: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
@@ -333,17 +353,28 @@ p {
   transform: rotate(-90deg);
   content: '';
   position: absolute;
-  width: 50px;
-  height: 6px;
+  width: 20px;
+  height: 3px;
   background: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
 }
 
-.teste-de-animation.open {
+.btn-wishlist.open {
   background-color: rgb(216, 27, 27);
 }
 
-.teste-de-animation.open .plus::after {
+.btn-wishlist.open .plus::after {
   background: transparent;
+}
+
+@media screen and (max-width: 480px) {
+  .game-section {
+    transform: scale(0.5);
+
+  }
+  /* .game-prices p {
+    font-size: 30px;
+  } */
+
 }

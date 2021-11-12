@@ -3,21 +3,13 @@ let stores;
 
 async function insertDeals(data) {
   const filteredGames = getGamesWithStores(data);
-  filteredGames.forEach(
-    ({ normalPrice, salePrice, savings, thumb, title, storeIDS }) => {
-      createElements({
-        normalPrice,
-        salePrice,
-        savings,
-        thumb,
-        title,
-        storeIDS,
-      });
-    }
-  );
+  filteredGames.forEach((game) => {
+    createElements(game);
+  });
 }
 
 function createElements({
+  dealID,
   normalPrice,
   salePrice,
   savings,
@@ -26,7 +18,6 @@ function createElements({
   storeIDS,
 }) {
   const sectionDeals = document.querySelector('.deals');
-
   const sectionGame = document.createElement('section');
   sectionGame.classList.add('game-section');
   sectionDeals.appendChild(sectionGame);
@@ -46,32 +37,28 @@ function createElements({
   spanGameTitle.innerText = title;
   spanGameTitle.style.fontWeight = 900;
 
-  const btnWishlist = document.createElement('button');
-  btnWishlist.classList.add('btn-wishlist');
+  const btnWishlist = document.createElement('div');
+  const plusInFav = document.createElement('div');
+
+  btnWishlist.className = 'btn-wishlist';
+  btnWishlist.id = dealID;
+  addWishlistButtonClass(btnWishlist, dealID);
+  btnWishlist.addEventListener('click', addGameToWishlist);
+  plusInFav.className = 'plus';
+  btnWishlist.appendChild(plusInFav);
   divThumb.appendChild(btnWishlist);
 
-  //escrito pelo nic
-const btnFav = document.createElement('div');
-const plusInFav = document.createElement('div');
-
-btnFav.className = 'teste-de-animation';
-plusInFav.className = 'plus';
-btnFav.appendChild(plusInFav);
-
-btnWishlist.appendChild(btnFav)
-
-const btnAnimated = document.querySelector('.bagulho');
-
-let menuOpen = false;
-btnAnimated.addEventListener('click', () => {
-  if (!menuOpen) {
-    btnAnimated.classList.add('open');
-    menuOpen = true;
-  } else {
-    btnAnimated.classList.remove('open');
-    menuOpen = false;
-  }
-});
+  const btnAnimated = document.querySelector('.bagulho');
+  let menuOpen = false;
+  btnAnimated.addEventListener('click', () => {
+    if (!menuOpen) {
+      btnAnimated.classList.add('open');
+      menuOpen = true;
+    } else {
+      btnAnimated.classList.remove('open');
+      menuOpen = false;
+    }
+  });
   //escrito pelo nic
 
   // const btnImg = document.createElement('img');
@@ -101,24 +88,25 @@ btnAnimated.addEventListener('click', () => {
 
   const sectionLogo = createLogosIcons(storeIDS);
   sectionGame.appendChild(sectionLogo);
+}
 
-  //escrito pelo nic
+function createLoad() {
+  const loader = document.createElement('div');
+  const div = document.createElement('div');
+  const sectionGame = document.querySelector('section')
+  loader.className = 'loader';
+  loader.appendChild(div);
+  sectionGame.appendChild(loader);
+}
 
-let fav = false;
-btnFav.addEventListener('click', () => {
-  if (!fav) {
-    btnFav.classList.add('open');
-    fav = true;
-  } else {
-    btnFav.classList.remove('open');
-    fav = false;
-  }
-});
-//escrito pelo nic
+function apagaLoad() {
+  document.querySelector('.loader').remove()
 }
 
 window.onload = async function () {
+createLoad()
   stores = await fetchStores();
   deals = await fetchDeals();
+  // apagaLoad()
   insertDeals(deals);
 };

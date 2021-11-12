@@ -19,6 +19,23 @@ async function fetchDealsByTitle(title) {
   return result;
 }
 
+async function fetchDealByID(id) {
+  const response = await fetch(`${urlDeals}&id=${id}`);
+  const result = await response.json();
+  return result;
+}
+
+async function fetchWishlist() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist'));
+  const deals = await Promise.all(wishlist.map(async (dealID) => {
+    const deal = await fetchDealByID(dealID)
+    deal.gameInfo.dealID = dealID;
+    return deal;
+  }));
+  console.log(deals);
+  return deals;
+}
+
 function getStoreImage(id) {
   const store = stores.find(({ storeID }) => id === storeID);
   const logo = `https://www.cheapshark.com/${store.images.logo}`;
@@ -64,14 +81,18 @@ function createLogosIcons(storeIDS) {
   return sectionLogo;
 }
 
+function getSingleGameWithStores(game) {
+  const mainDeal = game.deals[0];
+  const ids = game.deals.map((deal) => deal.storeID);
+  mainDeal.storeIDS = ids;
+  return mainDeal;
+}
+
 function getGamesWithStores(gameList) {
   const groupedDeals = groupByDeals(gameList);
   const filteredGames = [];
   groupedDeals.forEach((game) => {
-    const mainDeal = game.deals[0];
-    const ids = game.deals.map((deal) => deal.storeID);
-    mainDeal.storeIDS = ids;
-    filteredGames.push(mainDeal);
+    filteredGames.push(getSingleGameWithStores(game));
   });
   return filteredGames;
 }

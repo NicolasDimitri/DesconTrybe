@@ -23,6 +23,9 @@ body {
   z-index: 1;
 }
 
+.logo-name {
+  display: flex;
+}
 
 .menu {
   height: 60px;
@@ -33,7 +36,7 @@ body {
   margin-left: 15px;
 }
 /* escrito pelo nic */
-.teste-de-animation {
+.btn-wishlist {
   height: 30px;
   width: 30px;
   background-color: rgb(2, 185, 2);
@@ -45,7 +48,7 @@ body {
   cursor: pointer;
 }
 
-.teste-de-animation:hover {
+.btn-wishlist:hover {
   transform: scale(1.1);
 }
 
@@ -60,7 +63,7 @@ body {
 }
 
 .plus::after {
-  transform: translateX(-10px) rotate(-90deg);
+  transform: rotate(-90deg);
   content: '';
   position: absolute;
   width: 20px;
@@ -70,17 +73,55 @@ body {
   box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
 }
 
-.teste-de-animation.open {
+.btn-wishlist.open {
   background-color: rgb(216, 27, 27);
 }
 
-.teste-de-animation.open .plus::after {
+.btn-wishlist.open .plus::after {
   background: transparent;
+}
+.navegation {
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.navegation a {
+  margin: 0 10px;
+  color: white;
+}
+
+.loader {
+  align-self: center;
+  position: absolute;
+  margin-top: 300px;
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader div {
+  border: 8px solid yellow;
+  border-radius: 50%;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  border-top-color: red;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg)
+  }  
 }
 
 .bagulho {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -145,8 +186,8 @@ body {
   background-color: transparent;
   font-size: 50px;
   color: white;
+  margin-left: 8px;
 }
-
 
 .container {
   max-width: 920px;
@@ -259,6 +300,10 @@ body {
   text-align: center;
 }
 
+.title {
+  margin: 0;
+}
+
 .game-title {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -268,22 +313,14 @@ body {
   margin: 7px;
 }
 
-.btn-wishlist {
-  width: 40px;
-  height: 40px;
-  margin: 0;
-  background-color: transparent;
-  border: none;
-}
-
 .btn-add-img {
   width: 30px;
 }
 
-.btn-wishlist:hover .btn-add-img:hover {
+/* .btn-wishlist:hover .btn-add-img:hover {
   cursor: pointer;
   width: 32px;
-}
+} */
 
 .game-stores {
   display: flex;
